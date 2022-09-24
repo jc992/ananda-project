@@ -1,29 +1,39 @@
-import AddReactionIcon from '@mui/icons-material/AddReaction';
-import AndroidIcon from '@mui/icons-material/Android';
-import BrowserUpdatedIcon from '@mui/icons-material/BrowserUpdated';
+import { Air, LocalFireDepartment, Water } from '@mui/icons-material';
 import laptopImage from '../images/Laptop.png';
 import tabletImage from '../images/Tablet.png';
 
 const sx = { cursor: 'pointer', fontSize: 40, marginBottom: '1rem' };
 
-const showcaseItems = [
+const mainHeroItems = [
   {
     delay: '0',
-    title: 'Anti-spam',
-    description: 'Lorem ipsum dolor sit amet porro his no his deleniti',
-    item: <AddReactionIcon color="primary" sx={sx} />,
   },
   {
     delay: '150',
-    title: 'Phishing Detect',
-    description: 'Ne error antiopam usu. Sed vocen concludaturque ea',
-    item: <AndroidIcon color="primary" sx={sx} />,
   },
   {
     delay: '300',
-    title: 'Smart Scan',
+  },
+];
+
+const showcaseItems = [
+  {
+    delay: '0',
+    title: 'Spirituality',
+    description: 'Lorem ipsum dolor sit amet porro his no his deleniti',
+    item: <Air color="primary" sx={sx} />,
+  },
+  {
+    delay: '150',
+    title: 'Enlightenment',
+    description: 'Ne error antiopam usu. Sed vocen concludaturque ea',
+    item: <LocalFireDepartment color="primary" sx={sx} />,
+  },
+  {
+    delay: '300',
+    title: 'Vibrations',
     description: 'Et usu ocurreret elaboraret doctus prodesse assueverit.',
-    item: <BrowserUpdatedIcon color="primary" sx={sx} />,
+    item: <Water color="primary" sx={sx} />,
   },
 ];
 
@@ -35,7 +45,7 @@ const detailsItems = [
     description:
       'Te iisque labitur eos, nec sale argumentum scribentur no, augue disputando in vim. Erat fugit sit at,ius lorem deserunt deterruisset no.',
     button: 'Learn More',
-    image: laptopImage,
+    image: 'https://picsum.photos/id/573/1024/720',
     imageAos: 'fade-left',
     isImageFirst: false,
   },
@@ -46,7 +56,7 @@ const detailsItems = [
     description:
       'Te iisque labitur eos, nec sale argumentum scribentur no, augue disputando in vim. Erat fugit sit at,ius lorem deserunt deterruisset no.',
     button: 'Learn More',
-    image: tabletImage,
+    image: 'https://picsum.photos/id/575/1024/720',
     imageAos: 'fade-right',
     isImageFirst: true,
   },
@@ -69,4 +79,4 @@ const clients = [
   `${clientLogoEndpoint}6.png`,
 ];
 
-export { showcaseItems, detailsItems, pricingItems, clients };
+export { mainHeroItems, showcaseItems, detailsItems, pricingItems, clients };

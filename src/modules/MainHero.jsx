@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Button, Box } from '@mui/material';
 import { useOpacity } from '../hooks/useOpacity';
+import { mainHeroItems } from '../utils/items';
 
 const imageSource = 'https://images.pexels.com/photos/515631/pexels-photo-515631.jpeg';
 
@@ -87,18 +88,12 @@ export const MainHero = () => {
   return (
     <OpacityWrapper opacity={opacity}>
       <ImageContainer>
-        <Box className="block">
-          <Box className="side -main"></Box>
-          <Box className="side -left"></Box>
-        </Box>
-        <Box className="block">
-          <Box className="side -main"></Box>
-          <Box className="side -left"></Box>
-        </Box>
-        <Box className="block">
-          <Box className="side -main"></Box>
-          <Box className="side -left"></Box>
-        </Box>
+        {mainHeroItems.map(({ delay }, i) => (
+          <Box key={i} className="block" data-aos="fade-up" data-aos-delay={delay} data-aos-duration="3000">
+            <Box className="side -main"></Box>
+            <Box className="side -left"></Box>
+          </Box>
+        ))}
       </ImageContainer>
       <Button variant="outlined" color="primary">
         Get Started
