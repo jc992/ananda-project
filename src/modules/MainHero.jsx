@@ -1,49 +1,108 @@
-import styled from "styled-components";
-import { Button, Grid, Typography } from "@mui/material";
-import { Container } from "@mui/system";
-import heroImage from "../images/Lotus_2.jpeg";
-import { useEffect, useState } from "react";
+import styled from 'styled-components';
+import { Button, Box } from '@mui/material';
+import { useOpacity } from '../hooks/useOpacity';
 
-const Wrapper = styled.div`
+const imageSource = 'https://images.pexels.com/photos/515631/pexels-photo-515631.jpeg';
+
+const OpacityWrapper = styled.Box`
   opacity: ${({ opacity }) => opacity};
-  background: url(${heroImage});
-  background-size: cover;
-  min-height: 80vh;
+`;
+
+const ImageContainer = styled.Box`
+  position: relative;
+  width: 80%;
+  padding-top: 50%;
+  margin: 2rem auto;
+
+  & > .block {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    perspective: 1000px;
+  }
+  & > .block:nth-of-type(1) {
+    height: 80%;
+    top: 10%;
+    left: 17%;
+    width: 15%;
+  }
+  & > .block:nth-of-type(2) {
+    top: 0;
+    left: 35%;
+  }
+  & > .block:nth-of-type(3) {
+    height: 80%;
+    top: 10%;
+    left: 64%;
+    width: 15%;
+  }
+  & > .block > .side {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(${imageSource});
+    background-size: auto 100%;
+    box-shadow: -1vw 0.5vw 1vw rgba(0, 0, 0, 0.3);
+  }
+  & > .block > .side.-main {
+    height: 100%;
+    width: 100%;
+    transform: rotateY(30deg);
+    transform-origin: 0 50%;
+  }
+  & > .block > .side.-left {
+    height: 100%;
+    width: 20%;
+    transform-origin: 0 50%;
+    transform: rotateY(-60deg) translateX(-100%);
+    filter: brightness(40%);
+  }
+  & > .block:nth-of-type(1) > .side.-main {
+    background-position: 4% 50%;
+    background-size: auto 130%;
+  }
+  & > .block:nth-of-type(1) > .side.-left {
+    background-position: 0 50%;
+    background-size: auto 130%;
+  }
+  & > .block:nth-of-type(2) > .side.-main {
+    background-position: 50% 0;
+  }
+  & > .block:nth-of-type(2) > .side.-left {
+    background-position: 28.5% 0;
+  }
+  & > .block:nth-of-type(3) > .side.-main {
+    background-position: 96% 50%;
+    background-size: auto 130%;
+  }
+  & > .block:nth-of-type(3) > .side.-left {
+    background-position: 78% 50%;
+    background-size: auto 130%;
+  }
 `;
 
 export const MainHero = () => {
-  const [opacity, setOpacity] = useState(1);
-
-  const opacityOnScroll = () => {
-    const baseline = 1000;
-    const opacity = baseline - window.scrollY * 1.7;
-    if (opacity < 0) return;
-    !window ? setOpacity(1) : setOpacity(opacity / baseline);
-  };
-
-  useEffect(() => {
-    document.addEventListener("scroll", () => opacityOnScroll());
-    return () =>
-      document.removeEventListener("scroll", () => opacityOnScroll());
-  }, []);
+  const opacity = useOpacity();
 
   return (
-    <Wrapper opacity={opacity}>
-      <Container>
-        <Grid container spacing={2}>
-          <Grid item sm={8}>
-            <Typography variant="h2" color="white" sx={{ margin: "2rem 0" }}>
-              Ananda Project
-            </Typography>
-          </Grid>
-          <Grid item sm={6}>
-            <Button variant="outlined" color="secondary">
-              {/* TODO make white color for button */}
-              Get Started
-            </Button>
-          </Grid>
-        </Grid>
-      </Container>
-    </Wrapper>
+    <OpacityWrapper opacity={opacity}>
+      <ImageContainer>
+        <Box class="block">
+          <Box class="side -main"></Box>
+          <Box class="side -left"></Box>
+        </Box>
+        <Box class="block">
+          <Box class="side -main"></Box>
+          <Box class="side -left"></Box>
+        </Box>
+        <Box class="block">
+          <Box class="side -main"></Box>
+          <Box class="side -left"></Box>
+        </Box>
+      </ImageContainer>
+      <Button variant="outlined" color="primary">
+        Get Started
+      </Button>
+    </OpacityWrapper>
   );
 };
