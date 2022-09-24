@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Button, Grid, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import HomeIcon from "@mui/icons-material/Home";
-import heroImage from "../images/MainHero.jpeg";
+import heroImage from "../images/Lotus_2.jpeg";
 import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`
@@ -32,28 +31,14 @@ export const MainHero = () => {
     <Wrapper opacity={opacity}>
       <Container>
         <Grid container spacing={2}>
-          <Grid item sm={6}>
-            <HomeIcon sx={{ cursor: "pointer", fontSize: 40, color: "#fff" }} />
-          </Grid>
-          <Grid align="end" item sm={6}>
-            <Typography variant="h6" color="white" sx={{ cursor: "pointer" }}>
-              Get Early Access
-            </Typography>
-          </Grid>
           <Grid item sm={8}>
-            <Typography variant="h1" color="white" sx={{ margin: "2rem 0" }}>
-              A New Way To Start Business
-            </Typography>
-          </Grid>
-          <Grid item sm={8}>
-            <Typography paragraph color="white">
-              Lorem ipsum dolor sit amet, id nec enim autem oblique, ei dico
-              mentitum duo. Illum iusto laoreet his te. Lorem partiendo mel ex.
-              Ad vitae admodum voluptatum per.
+            <Typography variant="h2" color="white" sx={{ margin: "2rem 0" }}>
+              Ananda Project
             </Typography>
           </Grid>
           <Grid item sm={6}>
-            <Button variant="contained" color="primary">
+            <Button variant="outlined" color="secondary">
+              {/* TODO make white color for button */}
               Get Started
             </Button>
           </Grid>
