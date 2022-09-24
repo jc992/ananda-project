@@ -4,11 +4,11 @@ import { useOpacity } from '../hooks/useOpacity';
 
 const imageSource = 'https://images.pexels.com/photos/515631/pexels-photo-515631.jpeg';
 
-const OpacityWrapper = styled.Box`
+const OpacityWrapper = styled.div`
   opacity: ${({ opacity }) => opacity};
 `;
 
-const ImageContainer = styled.Box`
+const ImageContainer = styled.div`
   position: relative;
   width: 80%;
   padding-top: 50%;
@@ -87,17 +87,17 @@ export const MainHero = () => {
   return (
     <OpacityWrapper opacity={opacity}>
       <ImageContainer>
-        <Box class="block">
-          <Box class="side -main"></Box>
-          <Box class="side -left"></Box>
+        <Box className="block">
+          <Box className="side -main"></Box>
+          <Box className="side -left"></Box>
         </Box>
-        <Box class="block">
-          <Box class="side -main"></Box>
-          <Box class="side -left"></Box>
+        <Box className="block">
+          <Box className="side -main"></Box>
+          <Box className="side -left"></Box>
         </Box>
-        <Box class="block">
-          <Box class="side -main"></Box>
-          <Box class="side -left"></Box>
+        <Box className="block">
+          <Box className="side -main"></Box>
+          <Box className="side -left"></Box>
         </Box>
       </ImageContainer>
       <Button variant="outlined" color="primary">
