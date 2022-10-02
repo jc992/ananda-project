@@ -1,10 +1,6 @@
-import { Container } from '@mui/system';
-import { Typography } from '@mui/material';
 import styled from 'styled-components';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import { Container } from '@mui/system';
+import { Facebook, LinkedIn, Instagram, Twitter } from '@mui/icons-material';
 
 const Wrapper = styled.div`
   background-color: #dbdbdb;
@@ -36,10 +32,10 @@ export const Footer = () => (
     <Container sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <P>Copyright © 2022 ffmcgee.</P>
       <IconWrapper>
-        <FacebookIcon />
-        <InstagramIcon />
-        <TwitterIcon />
-        <LinkedInIcon />
+        <Facebook />
+        <Instagram />
+        <Twitter />
+        <LinkedIn />
       </IconWrapper>
     </Container>
   </Wrapper>
