@@ -1,6 +1,4 @@
 import { Air, LocalFireDepartment, Water } from '@mui/icons-material';
-import laptopImage from '../images/Laptop.png';
-import tabletImage from '../images/Tablet.png';
 
 const sx = { cursor: 'pointer', fontSize: 40, marginBottom: '1rem' };
 

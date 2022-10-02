@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button, Paper, Typography } from '@mui/material';
+import { Button, Paper } from '@mui/material';
 import { isElementPair } from '../utils/functions';
 import { backgroundColor } from '../themes/colors';
 
@@ -9,26 +9,32 @@ const Price = styled.span`
   line-height: 1.1;
 `;
 
+const P = styled.p`
+  color: #000;
+  font-family: 'Cinzel';
+  font-size: 12px;
+  font-weight: normal;
+`;
+
 export const Card = ({ title, price, position }) => (
   <Paper
     sx={{
-      height: '275px',
+      height: '315px',
       padding: '3rem .5rem',
-      backgroundColor: `${isElementPair(position) ? backgroundColor : 'transparent'}`,
-      color: `${isElementPair(position) ? 'white' : 'black'}`,
+      backgroundColor: `${isElementPair(position) ? `${backgroundColor}` : '#ddddd9' }`,
     }}
   >
-    <Typography>{title}</Typography>
-    <Typography>
+    <P>{title}</P>
+    <P>
       € <Price>{price}</Price>/ MO.
-    </Typography>
-    <Typography>Lorem ipsum dolor sit amet porro</Typography>
-    <Typography>Ne error antiopam usu</Typography>
-    <Typography>Et usu ocurreret elaboraret</Typography>
+    </P>
+    <P>Lorem ipsum dolor sit amet porro</P>
+    <P>Ne error antiopam usu</P>
+    <P>Et usu ocurreret elaboraret</P>
     <Button
-      variant="contained"
+      variant="outlined"
       color="primary"
-      sx={{ marginTop: '2rem', backgroundColor: `${isElementPair(position) ? 'black' : ''}` }}
+      sx={{ marginTop: '2rem', backgroundColor: '#000', color: '#fff' }}
     >
       Buy
     </Button>
