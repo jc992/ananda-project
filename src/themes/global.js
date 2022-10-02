@@ -9,23 +9,23 @@ const commonSettings = {
         },
       },
     },
-    MuiOutlinedInput: {
-      styleOverrides: {
-        root: {
-          color: 'white',
-        },
-        notchedOutline: {
-          border: `1px solid gray`,
-        },
-      },
-    },
-    MuiInputLabel: {
-      styleOverrides: {
-        root: {
-          color: 'white',
-        },
-      },
-    },
+    // MuiOutlinedInput: {
+    //   styleOverrides: {
+    //     root: {
+    //       color: 'white',
+    //     },
+    //     notchedOutline: {
+    //       border: `1px solid gray`,
+    //     },
+    //   },
+    // },
+    // MuiInputLabel: {
+    //   styleOverrides: {
+    //     root: {
+    //       color: 'white',
+    //     },
+    //   },
+    // },
     MuiContainer: {
       styleOverrides: {
         root: {
