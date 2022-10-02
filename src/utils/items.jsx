@@ -46,6 +46,7 @@ const detailsItems = [
     image: 'https://picsum.photos/id/573/1024/720',
     imageAos: 'fade-left',
     isImageFirst: false,
+    marginLeft: 15,
   },
   {
     duration: '1000',
@@ -57,6 +58,7 @@ const detailsItems = [
     image: 'https://picsum.photos/id/575/1024/720',
     imageAos: 'fade-right',
     isImageFirst: true,
+    marginLeft: 10,
   },
 ];
 
