@@ -3,6 +3,7 @@ import { Button, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import { detailsItems } from '../utils/items';
 import { backgroundColor } from '../themes/colors';
+import { useIsMobileDevice } from '../hooks/useIsMobileDevice';
 
 const Wrapper = styled.div`
   & > div {
@@ -21,7 +22,7 @@ const Image = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 8.5rem;
+  margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}rem` : '0')};
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -84,48 +85,54 @@ const P = styled.p`
   padding-bottom: 2rem;
 `;
 
-export const Details = () => (
+export const Details = () => {
+  const isMobileDevice = useIsMobileDevice()
+  return (
   <Wrapper>
-    {detailsItems.map(({ duration, textAos, title, description, button, image, imageAos, isImageFirst }, i) => {
-      const renderText = () => (
-        <Grid
-          data-aos={textAos}
-          data-aos-duration={duration}
-          item
-          sm={6}
-          sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-        >
-          <TextContainer>
-            <H3>{title}</H3>
-            <P>{description}</P>
-          </TextContainer>
-          <Button variant="outlined" color="primary">
-            {button}
-          </Button>
-        </Grid>
-      );
-      const renderImage = () => (
-        <Grid data-aos={imageAos} data-aos-duration={duration} item sm={6}>
-          <Image src={image} />
-        </Grid>
-      );
-      return (
-        <Box key={i}>
-          <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
-            {isImageFirst ? (
-              <>
-                {renderImage()}
-                {renderText()}
-              </>
-            ) : (
-              <>
-                {renderText()}
-                {renderImage()}
-              </>
-            )}
+    {detailsItems.map(
+      ({ duration, textAos, title, description, button, image, imageAos, isImageFirst, marginLeft }, i) => {
+        const renderText = () => (
+          <Grid
+            data-aos={textAos}
+            data-aos-duration={duration}
+            item
+            md={6}
+            sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
+          >
+            <TextContainer>
+              <H3>{title}</H3>
+              <P>{description}</P>
+            </TextContainer>
+            <Button variant="outlined" color="primary">
+              {button}
+            </Button>
           </Grid>
-        </Box>
-      );
-    })}
+        );
+        const renderImage = () => (
+          <Grid data-aos={imageAos} data-aos-duration={duration} item md={6}>
+            <Image src={image} marginLeft={!isMobileDevice && marginLeft} />
+          </Grid>
+        );
+        return (
+          <Box key={i}>
+            <Grid container spacing={2} direction="row" justifyContent="center" alignItems="center">
+              {isImageFirst || isMobileDevice ? (
+                <>
+                  {renderImage()}
+                  {renderText()}
+                </>
+              ) : (
+                <>
+                  {renderText()}
+                  {renderImage()}
+                </>
+              )}
+            </Grid>
+          </Box>
+        );
+      },
+    )}
   </Wrapper>
-);
+  )
+
+};
