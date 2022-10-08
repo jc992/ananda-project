@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button, Paper } from '@mui/material';
 import { isElementPair } from '../utils/functions';
-import { backgroundColor } from '../themes/colors';
+import { backgroundColor, altColor } from '../themes/colors';
 
 const Price = styled.span`
   font-size: 5.5rem;
@@ -21,7 +21,7 @@ export const Card = ({ title, price, position }) => (
     sx={{
       height: '315px',
       padding: '3rem .5rem',
-      backgroundColor: `${isElementPair(position) ? `${backgroundColor}` : '#ddddd9' }`,
+      backgroundColor: `${isElementPair(position) ? `${backgroundColor}` : `${altColor}` }`,
     }}
   >
     <P>{title}</P>

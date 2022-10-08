@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { Container } from '@mui/system';
 import { Facebook, LinkedIn, Instagram, Twitter } from '@mui/icons-material';
+import { altColor } from '../themes/colors';
 
 const Wrapper = styled.div`
-  background-color: #dbdbdb;
+  background-color: ${altColor};
 `;
 
 const IconWrapper = styled.div`
