@@ -21,9 +21,10 @@ export const Card = ({ title, price, position }) => (
     sx={{
       height: '315px',
       padding: '3rem .5rem',
-      backgroundColor: `${isElementPair(position) ? `${backgroundColor}` : '#ddddd9' }`,
+      backgroundColor: `${isElementPair(position) ? `${backgroundColor}` : 'rgba(186, 178, 173, .2)' }`,
     }}
   >
+  {/* //TODO(joaot): mexer aquela cor para uma var constant. */}
     <P>{title}</P>
     <P>
       € <Price>{price}</Price>/ MO.

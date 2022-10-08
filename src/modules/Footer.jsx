@@ -3,8 +3,10 @@ import { Container } from '@mui/system';
 import { Facebook, LinkedIn, Instagram, Twitter } from '@mui/icons-material';
 
 const Wrapper = styled.div`
-  background-color: #dbdbdb;
+  background-color: rgba(186, 178, 173, .2);
 `;
+  {/* //TODO(joaot): mexer aquela cor para uma var constant. */}
+
 
 const IconWrapper = styled.div`
   color: #000;
