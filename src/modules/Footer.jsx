@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import { Container } from '@mui/system';
 import { Facebook, LinkedIn, Instagram, Twitter } from '@mui/icons-material';
+import { altColor } from '../themes/colors';
 
 const Wrapper = styled.div`
-  background-color: rgba(186, 178, 173, .2);
+  background-color: ${altColor};
 `;
-  {/* //TODO(joaot): mexer aquela cor para uma var constant. */}
-
 
 const IconWrapper = styled.div`
   color: #000;
